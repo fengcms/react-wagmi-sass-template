@@ -1,16 +1,16 @@
-export type LangKeyTypes = 'en' | 'zh'
+export type LanguageCodeTypes = 'en' | 'zh'
 
-export interface LangDescTypes {
+export interface LanguageOptionTypes {
   name: string
-  code: LangKeyTypes
+  code: LanguageCodeTypes
 }
 
-export interface LangSectionTypes {
+export interface LanguageSectionTypes {
   section: string
   dicts: any
 }
 
-export interface LangConfigTypes {
-  desc: LangDescTypes
+export interface LanguageConfigTypes {
+  desc: LanguageOptionTypes
   translation: any
 }

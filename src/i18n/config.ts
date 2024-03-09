@@ -1,6 +1,6 @@
-import { LangDescTypes, LangKeyTypes } from '@/types/i18n'
+import { LanguageCodeTypes, LanguageOptionTypes } from '@/types/i18n'
 
-export const langDesc: { [key in LangKeyTypes]: LangDescTypes } = {
+export const languageOptionConfig: { [key in LanguageCodeTypes]: LanguageOptionTypes } = {
   en: {
     name: 'English',
     code: 'en'

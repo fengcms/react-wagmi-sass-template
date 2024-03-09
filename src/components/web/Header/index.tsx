@@ -1,22 +1,26 @@
 import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 import ALink from '@@/core/ALink'
+import SelectLanguage from '@@/web/Header/SelectLanguage'
 
 const Header: FC = () => {
+  const { t } = useTranslation()
   return (
     <div className="c-header">
       <h1>Logo</h1>
       <nav>
         <ul>
           <li>
-            <ALink to="/">Home</ALink>
-            <ALink to="/about">About</ALink>
+            <ALink to="/">{t('Header.Nav.Home')}</ALink>
+            <ALink to="/about">{t('Header.Nav.About')}</ALink>
           </li>
           <li></li>
         </ul>
       </nav>
+      <SelectLanguage />
       <ConnectButton />
     </div>
   )

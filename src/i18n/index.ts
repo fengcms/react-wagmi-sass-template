@@ -2,24 +2,17 @@ import { initReactI18next } from 'react-i18next'
 
 import i18n from 'i18next'
 
-import { LANG_CACHE_KEY } from '@/config'
-import { langDesc } from '@/i18n/config'
-import { LangConfigTypes } from '@/types/i18n'
+import { LANGUAGE_CACHE_KEY } from '@/config'
+import { languageOptionConfig } from '@/i18n/config'
+import { makeLangResources } from '@/i18n/utils'
+import { LanguageCodeTypes } from '@/types/i18n'
 
-export const languages = Object.values(langDesc)
+export const languages = Object.values(languageOptionConfig)
 
-const files = import.meta.glob(['./langs/*.ts'], { eager: true, import: 'default' })
-const filesKeys = Object.keys(files)
-const resources = filesKeys.reduce((init: any, path) => {
-  const {
-    desc: { code },
-    translation
-  } = files[path] as LangConfigTypes
-  init[code] = { translation }
-  return init
-}, {})
+const files = import.meta.glob(['./languages/*.ts'], { eager: true, import: 'default' })
+const resources = makeLangResources(files)
 
-export const fallbackLng = localStorage.getItem(LANG_CACHE_KEY) ?? 'en'
+export const fallbackLng = (localStorage.getItem(LANGUAGE_CACHE_KEY) ?? 'en') as LanguageCodeTypes
 
 i18n.use(initReactI18next).init({
   resources,
@@ -27,6 +20,6 @@ i18n.use(initReactI18next).init({
   interpolation: {
     escapeValue: false
   }
-} as any)
+})
 
 export default i18n

@@ -1,1 +1,1 @@
-export const LANG_CACHE_KEY = 'LANG_CACHE_KEY'
+export const LANGUAGE_CACHE_KEY = 'LANGUAGE_CACHE_KEY'
