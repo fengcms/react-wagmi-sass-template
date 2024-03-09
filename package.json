@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "biome check .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "style": "node ./src/style/build.cjs"
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.0.1",
@@ -24,6 +25,7 @@
     "@typescript-eslint/parser": "^7.1.1",
     "@vitejs/plugin-react": "^4.1.2",
     "prettier": "^3.2.5",
+    "sass": "^1.71.1",
     "typescript": "^5.4.2",
     "vite": "^5.1.5",
     "vite-plugin-node-polyfills": "^0.21.0"

@@ -1,0 +1,137 @@
+// base by fungleo
+html {
+  background-color: #f7faff;
+  color: $black;
+  &.dark {
+    // background: $c22;
+    // color: $cff;
+  }
+}
+body {
+  line-height: 1;
+  font-family: 'Proxima Nova', 'PingFang SC', 'Heiti SC', 'Droidsansfallback', Helvetica, 'Droid Sans';
+  font-size: 16px;
+
+  & > iframe {
+    display: none !important;
+    z-index: 0 !important;
+    position: static !important;
+  }
+}
+
+// html,body {overflow: hidden;}
+.block {
+  display: block;
+}
+.none {
+  display: none;
+}
+.clear {
+  clear: both;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.tl {
+  text-align: left;
+}
+.tr {
+  text-align: right;
+}
+.tc {
+  text-align: center;
+}
+
+.cf {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.cup {
+  cursor: pointer;
+}
+
+.web {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  &_ {
+    min-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+// 滚动条
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  // background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: $c33;
+  border-radius: 5px;
+  border: 2px solid rgba($c33, 0.5);
+}
+::-webkit-scrollbar-track-piece {
+  background: $cff;
+}
+// html,
+// body {
+//   * {
+//     &::-webkit-scrollbar-thumb {
+//       border-radius: 5px;
+//     }
+//     &::-webkit-scrollbar-track-piece {
+//       background: transparent;
+//     }
+//   }
+// }
+// 移动端特殊样式
+.mobile-mode {
+  body {
+    font-size: rem(16);
+    padding-top: constant(safe-area-inset-top); //为导航栏+状态栏的高度 88px
+    padding-left: constant(safe-area-inset-left); //如果未竖屏时为0
+    padding-right: constant(safe-area-inset-right); //如果未竖屏时为0
+    padding-bottom: constant(safe-area-inset-bottom); //为底下圆弧的高度 34px
+    font-weight: normal;
+  }
+  &::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    width: 0px !important;
+    height: 0px !important;
+    display: none !important;
+    background: transparent;
+    -webkit-overflow-scrolling: touch;
+    &-thumb,
+    &-track-piece {
+      background: transparent;
+    }
+  }
+  * {
+    user-select: none;
+  }
+
+  input,
+  textarea {
+    user-select: auto; /*webkit浏览器*/
+  }
+  input[type='password'] {
+    user-select: none;
+  }
+}
+
+$header-height: 114px;
+$header-bottom: 4px;

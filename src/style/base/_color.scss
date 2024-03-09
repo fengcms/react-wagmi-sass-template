@@ -1,0 +1,54 @@
+// 黑白灰
+$c55: #555;
+$cff: #fff;
+$c00: #000;
+$c66: #666;
+$c22: #222;
+$c33: #333;
+$c44: #444;
+$c88: #888;
+$cf7: #f7f7f7;
+
+$white: $cff;
+$bg: $cff;
+$text: $c55;
+$black: $c00;
+
+// system
+$succ: #4adcb3;
+$fail: #fd3d60;
+$wait: #ffb764;
+$info: #b1dcff;
+
+$rise: #13bc8b;
+$fall: $fail;
+
+// 彩色
+// 蓝色
+$blue: #1036e6;
+// 橘色
+$orange: #fea036;
+// 绿色
+$green: #007955;
+// 紫色
+$purple: #632eca;
+$red: $fail;
+// 主色
+$primary: $blue;
+// 线条
+$line: $cf7;
+// 背景
+
+.rise {
+  color: $rise;
+}
+.fall {
+  color: $fall;
+}
+.warn {
+  color: $orange;
+}
+
+.all-gray {
+  filter: grayscale(100%);
+}

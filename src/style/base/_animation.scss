@@ -1,0 +1,27 @@
+@keyframes load{
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes wait-modal {
+  0% { left: -50px; width: 50px;}
+  50% { left: calc(50% - 100px); width: 200px;}
+  100% { left: 100%; width: 50px;}
+}
+
+@keyframes zoom-in {
+  0% { @include fd(.1); }
+  100% { @include fd(1); }
+}
+@keyframes zoom-in-mini {
+  0% { @include fd(.85); }
+  100% { @include fd(1.15); }
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+:root {
+  --animate-delay: 0.5s;
+}
