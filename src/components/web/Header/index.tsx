@@ -16,6 +16,7 @@ const Header: FC = () => {
           <li>
             <ALink to="/">{t('Header.Nav.Home')}</ALink>
             <ALink to="/about">{t('Header.Nav.About')}</ALink>
+            <ALink to="/balance">{t('Header.Nav.Balance', 'Balance')}</ALink>
           </li>
           <li></li>
         </ul>

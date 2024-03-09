@@ -1,5 +1,5 @@
 import { createConfig, http } from 'wagmi'
-import { arbitrum, blast, goerli, mainnet } from 'wagmi/chains'
+import { arbitrum, mainnet } from 'wagmi/chains'
 
 import { connectorsForWallets } from '@rainbow-me/rainbowkit'
 import {
@@ -25,12 +25,10 @@ const connectors = connectorsForWallets(
 )
 
 export const config = createConfig({
-  chains: [mainnet, arbitrum, goerli, blast],
+  chains: [mainnet, arbitrum],
   connectors,
   transports: {
     [mainnet.id]: http(),
-    [arbitrum.id]: http(),
-    [goerli.id]: http(),
-    [blast.id]: http()
+    [arbitrum.id]: http()
   }
 })

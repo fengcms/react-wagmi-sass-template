@@ -5,6 +5,7 @@ import Footer from '@@/web/Footer'
 import Header from '@@/web/Header'
 
 import About from '@/pages/About'
+import Balance from '@/pages/Balance'
 import Home from '@/pages/Home'
 
 const App: FC = () => {
@@ -15,6 +16,7 @@ const App: FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/balance" element={<Balance />} />
         </Routes>
       </Suspense>
       <Footer />
