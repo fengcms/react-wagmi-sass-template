@@ -1,43 +1,23 @@
-import { FC } from 'react'
+import { FC, Suspense } from 'react'
+import { Route, Routes } from 'react-router-dom'
 
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import Footer from '@@/web/Footer'
+import Header from '@@/web/Header'
 
-import { ConnectButton } from '@rainbow-me/rainbowkit'
+import About from '@/pages/About'
+import Home from '@/pages/Home'
 
 const App: FC = () => {
-  const account = useAccount()
-  const { connectors, connect, status, error } = useConnect()
-  const { disconnect } = useDisconnect()
-
   return (
     <>
-      <div>
-        <h2>Account</h2>
-        <ConnectButton />
-        <div>
-          status: {account.status}
-          <br />
-          addresses: {JSON.stringify(account.addresses)}
-          <br />
-          chainId: {account.chainId}
-        </div>
-        {account.status === 'connected' && (
-          <button type="button" onClick={() => disconnect()}>
-            Disconnect
-          </button>
-        )}
-      </div>
-
-      <div>
-        <h2>Connect</h2>
-        {connectors.map((connector) => (
-          <button key={connector.uid} onClick={() => connect({ connector })} type="button">
-            {connector.name}
-          </button>
-        ))}
-        <div>{status}</div>
-        <div>{error?.message}</div>
-      </div>
+      <Header />
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Suspense>
+      <Footer />
     </>
   )
 }
