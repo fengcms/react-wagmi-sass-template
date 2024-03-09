@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 const App: FC = () => {
@@ -11,7 +12,7 @@ const App: FC = () => {
     <>
       <div>
         <h2>Account</h2>
-
+        <ConnectButton />
         <div>
           status: {account.status}
           <br />
@@ -19,7 +20,6 @@ const App: FC = () => {
           <br />
           chainId: {account.chainId}
         </div>
-
         {account.status === 'connected' && (
           <button type="button" onClick={() => disconnect()}>
             Disconnect
