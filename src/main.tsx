@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from '@/App.tsx'
+import '@/i18n'
 import DappProvider from '@/providers/DappProvider'
 import '@/style/style.scss'
 

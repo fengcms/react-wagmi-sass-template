@@ -1,0 +1,1 @@
+export const LANG_CACHE_KEY = 'LANG_CACHE_KEY'
