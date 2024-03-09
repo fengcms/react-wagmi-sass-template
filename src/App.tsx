@@ -1,7 +1,8 @@
 import { FC } from 'react'
 
-import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
+
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 const App: FC = () => {
   const account = useAccount()

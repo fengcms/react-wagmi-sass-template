@@ -1,7 +1,8 @@
-import { connectorsForWallets } from '@rainbow-me/rainbowkit'
-import { coinbaseWallet, walletConnectWallet } from '@rainbow-me/rainbowkit/wallets'
 import { createConfig, http } from 'wagmi'
 import { arbitrum, goerli, mainnet } from 'wagmi/chains'
+
+import { connectorsForWallets } from '@rainbow-me/rainbowkit'
+import { coinbaseWallet, walletConnectWallet } from '@rainbow-me/rainbowkit/wallets'
 
 const connectors = connectorsForWallets(
   [
