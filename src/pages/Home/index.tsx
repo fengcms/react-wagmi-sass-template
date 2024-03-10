@@ -4,13 +4,14 @@ import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 const Home: FC = () => {
   const account = useAccount()
-  const { connectors, connect, status, error } = useConnect()
+  const { status, error } = useConnect()
   const { disconnect } = useDisconnect()
 
   return (
     <>
       <div>
-        <h2>Account</h2>
+        <h2>Home</h2>
+        <h3>Account</h3>
         <div>
           status: {account.status}
           <br />
@@ -25,12 +26,7 @@ const Home: FC = () => {
         )}
       </div>
       <div>
-        <h2>Connect</h2>
-        {connectors.map((connector) => (
-          <button key={connector.uid} onClick={() => connect({ connector })} type="button">
-            {connector.name}
-          </button>
-        ))}
+        <h3>Connect</h3>
         <div>{status}</div>
         <div>{error?.message}</div>
       </div>

@@ -14,10 +14,13 @@ const Header: FC = () => {
         <ul>
           <li>
             <ALink to="/">{t('Header.Nav.Home')}</ALink>
+          </li>
+          <li>
             <ALink to="/about">{t('Header.Nav.About')}</ALink>
+          </li>
+          <li>
             <ALink to="/balance">{t('Header.Nav.Balance', 'Balance')}</ALink>
           </li>
-          <li></li>
         </ul>
       </nav>
       <SelectLanguage />
