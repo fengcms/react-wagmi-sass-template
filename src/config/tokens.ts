@@ -5,18 +5,20 @@ import { TokenConfigTypes } from '@/types/base'
 
 export const ZERO_ADDRESS = zeroAddress
 
-export const tokens: TokenConfigTypes[] = [
-  {
-    name: 'ETH',
-    symbol: 'ETH',
-    address: {
-      [ChainId.MAINNET]: ZERO_ADDRESS,
-      [ChainId.ARBITRUM]: ZERO_ADDRESS
-    },
-    decimals: 18,
-    precision: 4,
-    icon: 'symbol/eth.svg'
+export const ethConfig: TokenConfigTypes = {
+  name: 'ETH',
+  symbol: 'ETH',
+  address: {
+    [ChainId.MAINNET]: ZERO_ADDRESS,
+    [ChainId.ARBITRUM]: ZERO_ADDRESS
   },
+  decimals: 18,
+  precision: 4,
+  icon: 'symbol/eth.svg'
+}
+
+export const tokens: TokenConfigTypes[] = [
+  ethConfig,
   {
     name: 'WETH',
     symbol: 'WETH',

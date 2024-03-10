@@ -1,3 +1,5 @@
+import { formatUnits as viemFormatUnits } from 'viem'
+
 export const toType = (obj: any): string => {
   //@ts-ignore
   return {}.toString
@@ -27,4 +29,15 @@ export const copyText = (text: string) => {
       reject(e)
     }
   })
+}
+
+export const formatUnits = (value: bigint, decimal = 18, precision?: number): string => {
+  const result = viemFormatUnits(value, decimal)
+  if (precision != null) {
+    const tempArr = result.split('.')
+    if (tempArr[1]) {
+      return `${tempArr[0]}.${tempArr[1].substring(0, precision)}`
+    }
+  }
+  return result
 }

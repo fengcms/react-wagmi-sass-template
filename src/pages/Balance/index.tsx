@@ -1,15 +1,18 @@
 import { FC } from 'react'
 
-import { useToken, useTokens } from '@/hooks/useToken'
+import { useTokens, useUserBalances } from '@/hooks/useToken'
 
 const Balance: FC = () => {
   // console.log(tokens)
   const tokens = useTokens()
-  const token = useToken('USDC', 'name')
-  console.log(tokens, token)
+  const { balances } = useUserBalances()
   return (
     <div>
-      <p>Balance</p>
+      <h3>Tokens</h3>
+      <pre>{JSON.stringify(tokens, null, 2)}</pre>
+      <br />
+      <h3>Balance</h3>
+      <pre>{JSON.stringify(balances, null, 2)}</pre>
     </div>
   )
 }
