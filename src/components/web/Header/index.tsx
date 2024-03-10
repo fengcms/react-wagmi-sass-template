@@ -1,9 +1,8 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { ConnectButton } from '@rainbow-me/rainbowkit'
-
 import ALink from '@@/core/ALink'
+import ConnectButton from '@@/core/Wallet/ConnectButton'
 import SelectLanguage from '@@/web/Header/SelectLanguage'
 
 const Header: FC = () => {
