@@ -1,13 +1,12 @@
-import { toLower } from 'lodash'
 import { zeroAddress } from 'viem'
 
-import Token from '@/class/Token'
-import { AddressType, ChainId, TokenKeys } from '@/types/base'
+import { ChainId } from '@/config'
+import { TokenConfigTypes } from '@/types/base'
 
 export const ZERO_ADDRESS = zeroAddress
 
-export const tokens: { [key in TokenKeys]: Token } = {
-  ETH: new Token({
+export const tokens: TokenConfigTypes[] = [
+  {
     name: 'ETH',
     symbol: 'ETH',
     address: {
@@ -17,8 +16,8 @@ export const tokens: { [key in TokenKeys]: Token } = {
     decimals: 18,
     precision: 4,
     icon: 'symbol/eth.svg'
-  }),
-  WETH: new Token({
+  },
+  {
     name: 'WETH',
     symbol: 'WETH',
     address: {
@@ -27,10 +26,9 @@ export const tokens: { [key in TokenKeys]: Token } = {
     },
     decimals: 18,
     precision: 4,
-    icon: 'symbol/eth.svg'
-  }),
-
-  WBTC: new Token({
+    icon: 'symbol/weth.svg'
+  },
+  {
     name: 'WBTC',
     symbol: 'WBTC',
     address: {
@@ -40,8 +38,8 @@ export const tokens: { [key in TokenKeys]: Token } = {
     decimals: 8,
     precision: 4,
     icon: 'symbol/wbtc.png'
-  }),
-  USDC: new Token({
+  },
+  {
     name: 'USDC',
     symbol: 'USDC',
     address: {
@@ -51,16 +49,7 @@ export const tokens: { [key in TokenKeys]: Token } = {
     decimals: 6,
     precision: 2,
     icon: 'symbol/usdc.svg'
-  })
-}
-
-export const getTokenByAddress = (address: AddressType) => {
-  if (address === ZERO_ADDRESS) return tokens.ETH
-  const token = Object.keys(tokens)
-    .map((key) => tokens[key as TokenKeys])
-    .find((item) => toLower(String(item.address)) === toLower(address))
-  if (token) return token
-  return null
-}
+  }
+]
 
 export default tokens

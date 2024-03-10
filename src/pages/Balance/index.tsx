@@ -1,9 +1,12 @@
 import { FC } from 'react'
 
-import { tokens } from '@/config/tokens'
+import { useToken, useTokens } from '@/hooks/useToken'
 
 const Balance: FC = () => {
-  console.log(tokens)
+  // console.log(tokens)
+  const tokens = useTokens()
+  const token = useToken('USDC', 'name')
+  console.log(tokens, token)
   return (
     <div>
       <p>Balance</p>
